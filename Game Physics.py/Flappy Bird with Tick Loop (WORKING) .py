@@ -120,11 +120,11 @@ def main():
                     if descent == False:
                         flappy.speed = (-16)
                     descent = True
-                    if flappy.speed < 8:
-                        flappy.speed = flappy.speed + 0.5
+                    if flappy.speed < 16:
+                        flappy.speed = flappy.speed + 1
                     
-                    elif flappy.speed < 16:
-                        flappy.speed = flappy.speed + 0.25
+                    elif flappy.speed < 32:
+                        flappy.speed = flappy.speed + 0.5
 
                     else:
                         descent = False
@@ -192,7 +192,7 @@ def main():
 
 
 
-    speed = 16
+    speed = 32
     bird_img = tk.PhotoImage(file = "birb4.png")
 
     class flap():
