@@ -118,19 +118,26 @@ def main():
                 
                 if keyboard.is_pressed("space") == True or descent == True:
                     if descent == False:
-                        flappy.speed = (-16)
+                        flappy.speed = (-20)
                     descent = True
                     if flappy.speed < 16:
-                        flappy.speed = flappy.speed + 1
+                        flappy.speed = flappy.speed + 1.2
                     
                     elif flappy.speed < 32:
-                        flappy.speed = flappy.speed + 0.5
+                        flappy.speed = flappy.speed + 0.7
 
                     else:
                         descent = False
 
                     if keyboard.is_pressed("space"):
-                        flappy.speed = (-16)
+                        if flappy.speed < -40:
+                            flappy.speed = flappy.speed - 1
+                        elif flappy.speed > 4:
+                            flappy.speed = -20
+                        elif flappy.speed < 12.1:
+                            pass
+                        else:
+                            flappy.speed = flappy.speed - 12
 
                 if tick % 240 == 0:
                     game_canvas.move(top_pipe1, 0, -pipe_x)
